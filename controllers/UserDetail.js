@@ -1,6 +1,38 @@
+const Axios = require('axios') 
+require('dotenv').config() 
 const { getDataUserDetailTableModel, getDataUserDetailTablePivotModel } = require('../models/UserDetail')
 
 module.exports = {
+
+    getDataTweet: async (req, res) => {
+
+        const config = {
+            headers: { Authorization: `Bearer ` + process.env.TOKEN_TWITTER }
+        };
+
+        try {
+            
+            const result = await Axios.get( 
+                'https://api.twitter.com/2/lists/24275906/tweets',
+                config
+            )
+
+            res.send({
+                statusMessage: "Success",
+                statusCode: 200,
+                data: {
+                    total_data: result.data.data.length,
+                    result: result.data.data
+                }
+            })
+        } catch (error) {
+            res.send({
+                statusMessage: "Failed",
+                statusCode: 400,
+                data: false
+            })
+        }
+    },
 
     getDataUserDetailTable: async (req, res) => {
         try {
