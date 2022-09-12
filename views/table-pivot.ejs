@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <% for(let column in itemDataArray){ %>
+                <th><%- itemDataArray[column] %></th>
+            <% } %>
+        </tr>
+    <% for(let data in result){ %>
+        <tr>
+            <th><%- result[data].fullname %></th>
+            <th><%- result[data].email %></th>
+            <th><%- result[data].barang1 %></th>
+            <th><%- result[data].barang2 %></th>
+            <th><%- result[data].barang3 %></th>
+            <th><%- result[data].barang10 %></th>
+            <th><%- result[data].barang4 %></th>
+            <th><%- result[data].barang5 %></th>
+        </tr>
+    <% } %>
+    </table>
+</body>
+</html>

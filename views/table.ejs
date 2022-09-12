@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FD-No-2</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+    <% for(let data in result){ %>
+        <tr>
+            <td><%- result[data].id %></td>
+            <td><%- result[data].fullname %></td>
+            <td><%- result[data].email %></td>
+            <td><%- result[data].item %></td>
+            <td><%- result[data].quantity %></td>
+            <td><%- result[data].total_price %></td>
+        </tr>
+    <% } %>
+    </table>
+    <a href="/table-pivot">Pivot</a>
+</body>
+</html>
