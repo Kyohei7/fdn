@@ -24,3 +24,9 @@ run your project use script
 for run test use script
 
     npm run test
+
+### running the route
+
+    /table -> Get Data Table
+    /table-pivot -> Get Data Table Privot
+    /twitter -> Get Data User Tweet
